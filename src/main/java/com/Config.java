@@ -25,12 +25,12 @@ public class Config extends WsConfigurerAdapter
         return new ServletRegistrationBean(servlet, "/service/*");
     }
 
-    @Bean(name = "studentDetailsWsdl")
+    @Bean(name = "libraryWsdl")
     public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema countriesSchema)
     {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
-        wsdl11Definition.setPortTypeName("StudentDetailsPort");
-        wsdl11Definition.setLocationUri("/service/student-details");
+        wsdl11Definition.setPortTypeName("libraryPort");
+        wsdl11Definition.setLocationUri("/service/book-details");
         wsdl11Definition.setTargetNamespace("http://www.examples.com/wsdl/HelloService.wsdl");
         wsdl11Definition.setSchema(countriesSchema);
         return wsdl11Definition;
@@ -39,6 +39,6 @@ public class Config extends WsConfigurerAdapter
     @Bean
     public XsdSchema countriesSchema()
     {
-        return new SimpleXsdSchema(new ClassPathResource("student.xsd"));
+        return new SimpleXsdSchema(new ClassPathResource("library.xsd"));
     }
 }

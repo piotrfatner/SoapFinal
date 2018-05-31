@@ -6,7 +6,7 @@
 //
 
 
-package https.www_howtodoinjava_com.xml.school;
+package generated;
 
 import javax.xml.bind.annotation.XmlRegistry;
 
@@ -37,27 +37,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link StudentDetailsResponse }
+     * Create an instance of {@link LibraryResponse }
      * 
      */
-    public StudentDetailsResponse createStudentDetailsResponse() {
-        return new StudentDetailsResponse();
+    public LibraryResponse createLibraryResponse() {
+        return new LibraryResponse();
     }
 
     /**
-     * Create an instance of {@link Student }
+     * Create an instance of {@link Book }
      * 
      */
-    public Student createStudent() {
-        return new Student();
+    public Book createBook() {
+        return new Book();
     }
 
     /**
-     * Create an instance of {@link StudentDetailsRequest }
+     * Create an instance of {@link LibraryRequest }
      * 
      */
-    public StudentDetailsRequest createStudentDetailsRequest() {
-        return new StudentDetailsRequest();
+    public LibraryRequest createLibraryRequest() {
+        return new LibraryRequest();
     }
 
 }

@@ -6,7 +6,7 @@
 //
 
 
-package https.www_howtodoinjava_com.xml.school;
+package generated;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -15,18 +15,18 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for Student complex type.
+ * <p>Java class for Book complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="Student">
+ * &lt;complexType title="Book">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="standard" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="address" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element title="title" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element title="standard" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element title="author" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,81 +36,72 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Student", propOrder = {
-    "name",
-    "standard",
-    "address"
+@XmlType(name = "Book", propOrder = {
+        "title",
+        "author",
+        "isRent"
 })
-public class Student {
+public class Book {
 
     @XmlElement(required = true)
-    protected String name;
-    protected int standard;
+    protected String title;
     @XmlElement(required = true)
-    protected String address;
-
+    protected String author;
+    @XmlElement(required = true)
+    protected boolean isRent;
     /**
-     * Gets the value of the name property.
+     * Gets the value of the title property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
     /**
-     * Sets the value of the name property.
+     * Sets the value of the title property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setName(String value) {
-        this.name = value;
+    public void setTitle(String value) {
+        this.title = value;
     }
 
     /**
-     * Gets the value of the standard property.
-     * 
-     */
-    public int getStandard() {
-        return standard;
-    }
-
-    /**
-     * Sets the value of the standard property.
-     * 
-     */
-    public void setStandard(int value) {
-        this.standard = value;
-    }
-
-    /**
-     * Gets the value of the address property.
+     * Gets the value of the author property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getAddress() {
-        return address;
+    public String getAuthor() {
+        return author;
     }
 
     /**
-     * Sets the value of the address property.
+     * Sets the value of the author property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setAddress(String value) {
-        this.address = value;
+    public void setAuthor(String value) {
+        this.author = value;
     }
 
+    public boolean isRent() {
+        return isRent;
+    }
+
+    public void setRent(boolean rent) {
+        isRent = rent;
+    }
 }

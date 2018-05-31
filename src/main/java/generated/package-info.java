@@ -6,4 +6,4 @@
 //
 
 @javax.xml.bind.annotation.XmlSchema(namespace = "http://www.examples.com/wsdl/HelloService.wsdl", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
-package https.www_howtodoinjava_com.xml.school;
+package generated;

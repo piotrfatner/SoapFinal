@@ -6,7 +6,7 @@
 //
 
 
-package https.www_howtodoinjava_com.xml.school;
+package generated;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element title="Book" type="{http://www.examples.com/wsdl/HelloService.wsdl}Book"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,36 +36,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "name"
+        "book"
 })
-@XmlRootElement(name = "StudentDetailsRequest")
-public class StudentDetailsRequest {
+@XmlRootElement(name = "LibraryResponse")
+public class LibraryResponse {
 
-    @XmlElement(required = true)
-    protected String name;
+    @XmlElement(name = "Book", required = true)
+    protected Book book;
 
     /**
-     * Gets the value of the name property.
+     * Gets the value of the book property.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Book }
      *     
      */
-    public String getName() {
-        return name;
+    public Book getBook() {
+        return book;
     }
 
     /**
-     * Sets the value of the name property.
+     * Sets the value of the book property.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Book }
      *     
      */
-    public void setName(String value) {
-        this.name = value;
+    public void setBook(Book value) {
+        this.book = value;
     }
 
 }
