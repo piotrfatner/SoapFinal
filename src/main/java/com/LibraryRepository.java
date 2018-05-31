@@ -38,4 +38,24 @@ public class LibraryRepository {
         Assert.notNull(name, "The Book's title must not be null");
         return books.get(name);
     }
+
+    public Book rentBook(String name){
+        Assert.notNull(name, "The Book's title must not be null");
+        Book bookToRent = books.get(name);
+        if(bookToRent!=null){
+            bookToRent.setRent(true);
+            return bookToRent;
+        }
+        return null;
+    }
+
+    public Book rentBackBook(String name){
+        Assert.notNull(name, "The Book's title must not be null");
+        Book bookToRent = books.get(name);
+        if(bookToRent!=null){
+            bookToRent.setRent(false);
+            return bookToRent;
+        }
+        return null;
+    }
 }

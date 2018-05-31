@@ -1,6 +1,8 @@
 package com;
 
 import generated.LibraryRequest;
+import generated.LibraryRequest2;
+import generated.LibraryRequest3;
 import generated.LibraryResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
@@ -19,12 +21,26 @@ public class LibraryEndpoint {
         this.LibraryRepository = LibraryRepository;
     }
 
+    @Autowired
+    LibraryUserService libraryUserService;
+
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "LibraryRequest")
     @ResponsePayload
     public LibraryResponse getBook(@RequestPayload LibraryRequest request) {
-        LibraryResponse response = new LibraryResponse();
-        response.setBook(LibraryRepository.findBook(request.getName()));
 
-        return response;
+        return libraryUserService.getBookByTitle(LibraryRepository, request.getName());
     }
+
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "LibraryRequest2")
+    @ResponsePayload
+    public LibraryResponse rentBook(@RequestPayload LibraryRequest2 request) {
+        return libraryUserService.rentBookByTitle(LibraryRepository, request.getName());
+    }
+
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "LibraryRequest3")
+    @ResponsePayload
+    public LibraryResponse rentBackBook(@RequestPayload LibraryRequest3 request) {
+        return libraryUserService.rentBackBookByTitle(LibraryRepository, request.getName());
+    }
+
 }
