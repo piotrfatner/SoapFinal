@@ -58,4 +58,24 @@ public class LibraryRepository {
         }
         return null;
     }
+
+    public Book changeBookAuthor(String name,String newAuthor){
+        Book book = books.get(name);
+        if(book!=null){
+            book.setAuthor(newAuthor);
+            return book;
+        }
+        return null;
+    }
+
+    public Book changeBookTitle(String name,String newTitle){
+        Book book = books.get(name);
+        if(book!=null){
+            books.remove(name);
+            book.setTitle(newTitle);
+            books.put(newTitle, book);
+            return book;
+        }
+        return null;
+    }
 }

@@ -25,6 +25,24 @@
         </xs:complexType>
     </xs:element>
 
+    <xs:element name="LibraryRequest4">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="newTitle" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="LibraryRequest5">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="newTitle" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
     <xs:element name="LibraryResponse">
         <xs:complexType>
             <xs:sequence>

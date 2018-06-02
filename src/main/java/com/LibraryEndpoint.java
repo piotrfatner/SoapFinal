@@ -1,9 +1,6 @@
 package com;
 
-import generated.LibraryRequest;
-import generated.LibraryRequest2;
-import generated.LibraryRequest3;
-import generated.LibraryResponse;
+import generated.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
@@ -24,6 +21,9 @@ public class LibraryEndpoint {
     @Autowired
     LibraryUserService libraryUserService;
 
+    @Autowired
+    LibraryEmployeeService libraryEmployeeService;
+
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "LibraryRequest")
     @ResponsePayload
     public LibraryResponse getBook(@RequestPayload LibraryRequest request) {
@@ -41,6 +41,18 @@ public class LibraryEndpoint {
     @ResponsePayload
     public LibraryResponse rentBackBook(@RequestPayload LibraryRequest3 request) {
         return libraryUserService.rentBackBookByTitle(LibraryRepository, request.getName());
+    }
+
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "LibraryRequest4")
+    @ResponsePayload
+    public LibraryResponse changeBookAuthor(@RequestPayload LibraryRequest4 request) {
+        return libraryEmployeeService.changeBookAuthor(LibraryRepository, request.getName(), request.getNewAuthor());
+    }
+
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "LibraryRequest5")
+    @ResponsePayload
+    public LibraryResponse changeBookName(@RequestPayload LibraryRequest5 request) {
+        return libraryEmployeeService.changeBookTitle(LibraryRepository, request.getName(), request.getNewTitle());
     }
 
 }
